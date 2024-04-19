@@ -30,28 +30,40 @@ public class RussianOrtodoxEncryptor  {
         public String encryptor() throws IOException {
 
             char[] array = FileToChars();
+            char [] copy = new char[array.length];
+            for (int i = 0; i < array.length ; i++) {
+                copy [i] = array [i];
+
+            }
 
             for (int i = 0; i < array.length; i++) {
-                char c = array[i];
+                char c = copy[i];
                 int index = RussianAlphabet.alphabet.indexOf(String.valueOf(c));
                 array[i] = RussianAlphabet()[(index + key)%RussianAlphabet.alphabet.size()];
 
 
             }
             System.out.println(new String(array));
+            getter.text = "";
             return new String(array);
         }
 
     public String decryptor() throws IOException {
 
         char[] array = FileToChars();
-          char [] copy = array;
+//         char [] copy = array;
+        char [] copy = new char[array.length];
+        for (int i = 0; i < array.length ; i++) {
+            copy [i] = array [i];
+
+        }
         for (int i = 0; i < array.length; i++) {
             char c = copy[i];
             int index = RussianAlphabet.alphabet.indexOf(String.valueOf(c));
             array[i] = RussianAlphabet()[(index - key+RussianAlphabet.alphabet.size())%RussianAlphabet.alphabet.size()];
         }
         System.out.println(new String(array));
+        getter.text = "";
         return new String(array);
     }
 
@@ -82,6 +94,7 @@ public class RussianOrtodoxEncryptor  {
 
          }
         System.out.println(new String(array));
+         getter.text = "";
         return new String(array);
     }
 

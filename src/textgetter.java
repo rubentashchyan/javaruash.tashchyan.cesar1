@@ -22,19 +22,16 @@ public void FileGetter() throws IOException {
        text =  text + input.readLine();
    }
     input.close();
-
-
-
 }
 
-    public void FileWriter() throws IOException {
+    public void FileWriter(String text) throws IOException {
 
         writefile = scanner.nextLine();
 
         File file2 = new File(writefile);
         file2.createNewFile();
         try (BufferedWriter output = new BufferedWriter(new FileWriter(file2))) {
-            output.write(encryptor.encryptor());
+            output.write(text);
         }
 
     }
