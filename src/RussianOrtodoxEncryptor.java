@@ -6,7 +6,7 @@ public class RussianOrtodoxEncryptor {
     Random random = new Random(20);
 
 
-    public textgetter getter;
+    public Textgetter getter;
 
 
     public RussianOrtodoxEncryptor(Textgetter getter) {
