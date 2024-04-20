@@ -2,13 +2,13 @@ import java.io.*;
 import java.util.Scanner;
 
 @SuppressWarnings("ALL")
-public class textgetter {
+public class Textgetter {
     Scanner scanner = new Scanner(System.in);
     public String getfile;
     public String writefile;
     public String text = "";
 
-    public textgetter() {
+    public Textgetter() {
 
         this.encryptor = new RussianOrtodoxEncryptor(this);
     }

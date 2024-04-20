@@ -7,7 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
 
-        textgetter Getter = new textgetter();
+        Textgetter Getter = new Textgetter();
 
 
         RussianOrtodoxEncryptor shfr = new RussianOrtodoxEncryptor(Getter);

@@ -9,7 +9,7 @@ public class RussianOrtodoxEncryptor {
     public textgetter getter;
 
 
-    public RussianOrtodoxEncryptor(textgetter getter) {
+    public RussianOrtodoxEncryptor(Textgetter getter) {
         this.getter = getter;
     }
 
