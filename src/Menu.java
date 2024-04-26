@@ -29,8 +29,8 @@ public class Menu {
             if (comanda == 1) {
                 System.out.println("введите адрес файла ");
                 getter.FileGetter();
-                System.out.println("Введите ключ");
-                shfr.setKey(scanner.nextInt());
+//                System.out.println("Введите ключ");
+//                shfr.Key(scanner.nextInt());
                 String encryptor = shfr.encryptor();
 
                 System.out.println("файл зашифрован, сохраните файл");
@@ -42,8 +42,8 @@ public class Menu {
             if (comanda == 2) {
                 System.out.println("введите адрес файла ");
                 getter.FileGetter();
-                System.out.println("Введите ключ");
-                shfr.setKey(scanner.nextInt());
+//                System.out.println("Введите ключ");
+//                shfr.setKey(scanner.nextInt());
                 String decryptor = shfr.decryptor();
                 System.out.println("файл дешифрован, сохраните файл");
                 System.out.println("введите адрес для сохранения файла");
