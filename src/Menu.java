@@ -28,34 +28,34 @@ public class Menu {
 
             if (comanda == 1) {
                 System.out.println("введите адрес файла ");
-                getter.FileGetter();
+                getter.ReadFile();
 //                System.out.println("Введите ключ");
 //                shfr.Key(scanner.nextInt());
                 String encryptor = shfr.encryptor();
 
                 System.out.println("файл зашифрован, сохраните файл");
                 System.out.println("введите адрес для сохранения файла");
-                getter.FileWriter(encryptor);
+                getter.WriterFile(encryptor);
 
             }
 
             if (comanda == 2) {
                 System.out.println("введите адрес файла ");
-                getter.FileGetter();
+                getter.ReadFile();
 //                System.out.println("Введите ключ");
 //                shfr.setKey(scanner.nextInt());
                 String decryptor = shfr.decryptor();
                 System.out.println("файл дешифрован, сохраните файл");
                 System.out.println("введите адрес для сохранения файла");
-                getter.FileWriter(decryptor);
+                getter.WriterFile(decryptor);
             }
             if (comanda == 3) {
                 System.out.println("введите адрес файла ");
-                getter.FileGetter();
+                getter.ReadFile();
                 String bruteforce = shfr.bruteforce();
                 System.out.println("файл взломан, сохраните файл");
                 System.out.println("введите адрес для сохранения файла");
-                getter.FileWriter(bruteforce);
+                getter.WriterFile(bruteforce);
 
             }
         }

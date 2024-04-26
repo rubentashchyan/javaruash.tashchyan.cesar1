@@ -9,7 +9,7 @@ public class RussianAlphabet {
 
 
   public    char[] arrayListToChars() {
-        StringBuilder builder = new StringBuilder();
+      StringBuilder builder = new StringBuilder();
         for (String str : alphabet) {
 
             builder.append(str);

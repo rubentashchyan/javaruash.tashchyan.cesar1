@@ -6,7 +6,7 @@ public class FileManager {
     private final Scanner scanner;
     private String getfile;
     private String writefile;
-    String text = "";
+   private String text = "";
 
     public FileManager(Scanner scanner) {
         this.scanner = scanner;
@@ -41,7 +41,7 @@ public class FileManager {
     }
 
 
-    public void FileGetter() throws IOException {
+    public void ReadFile() throws IOException {
         getfile = scanner.nextLine();
         File file = new File(getfile);
         BufferedReader input = new BufferedReader(new FileReader(file));
@@ -51,7 +51,7 @@ public class FileManager {
         input.close();
     }
 
-    public void FileWriter(String text) throws IOException {
+    public void WriterFile (String text) throws IOException {
 
         writefile = scanner.nextLine();
 
