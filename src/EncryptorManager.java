@@ -48,7 +48,7 @@ public class EncryptorManager {
 
         }
         System.out.println(new String(array));
-        getter.text = "";
+        getter.setText("");
         return new String(array);
     }
 
@@ -67,7 +67,7 @@ public class EncryptorManager {
             array[i] = RussianAlphabet()[(index - key + alphabet.getAlphabet().size()) % alphabet.getAlphabet().size()];
         }
         System.out.println(new String(array));
-        getter.text = "";
+        getter.setText("");
         return new String(array);
     }
 
@@ -98,7 +98,7 @@ public class EncryptorManager {
 
         }
         System.out.println(new String(array));
-        getter.text = "";
+        getter.setText("");
         return new String(array);
     }
 
