@@ -1,27 +1,33 @@
 import java.io.IOException;
 import java.util.Random;
 
-public class RussianOrtodoxEncryptor {
+public class EncryptorManager {
     public int key = 2;
     Random random = new Random(20);
+    private final RussianAlphabet alphabet;
+
+    public FileManager getter;
 
 
-    public Textgetter getter;
 
-
-    public RussianOrtodoxEncryptor(Textgetter getter) {
+    public EncryptorManager(FileManager getter, RussianAlphabet alphabet) {
         this.getter = getter;
+        this.alphabet = alphabet;
+
     }
+
 
 
     public char[] RussianAlphabet() {
         RussianAlphabet alph = new RussianAlphabet();
+
+
         return alph.arrayListToChars();
     }
 
     public char[] FileToChars() throws IOException {
 
-        return getter.text.toCharArray();
+        return getter.getText().toCharArray();
     }
 
 
@@ -36,8 +42,8 @@ public class RussianOrtodoxEncryptor {
 
         for (int i = 0; i < array.length; i++) {
             char c = copy[i];
-            int index = RussianAlphabet.alphabet.indexOf(String.valueOf(c));
-            array[i] = RussianAlphabet()[(index + key) % RussianAlphabet.alphabet.size()];
+            int index = alphabet.getAlphabet().indexOf(String.valueOf(c));
+            array[i] = RussianAlphabet()[(index + key) % alphabet.getAlphabet().size()];
 
 
         }
@@ -57,8 +63,8 @@ public class RussianOrtodoxEncryptor {
         }
         for (int i = 0; i < array.length; i++) {
             char c = copy[i];
-            int index = RussianAlphabet.alphabet.indexOf(String.valueOf(c));
-            array[i] = RussianAlphabet()[(index - key + RussianAlphabet.alphabet.size()) % RussianAlphabet.alphabet.size()];
+            int index = alphabet.getAlphabet().indexOf(String.valueOf(c));
+            array[i] = RussianAlphabet()[(index - key + alphabet.getAlphabet().size()) % alphabet.getAlphabet().size()];
         }
         System.out.println(new String(array));
         getter.text = "";
@@ -80,8 +86,8 @@ public class RussianOrtodoxEncryptor {
             randomkey = random.nextInt(1, 20);
             for (int i = 0; i < array.length; i++) {
                 char c = copy[i];
-                int index = RussianAlphabet.alphabet.indexOf(String.valueOf(c));
-                array[i] = RussianAlphabet()[(index - randomkey + RussianAlphabet.alphabet.size()) % RussianAlphabet.alphabet.size()];
+                int index = alphabet.getAlphabet().indexOf(String.valueOf(c));
+                array[i] = RussianAlphabet()[(index - randomkey + alphabet.getAlphabet().size()) % alphabet.getAlphabet().size()];
             }
             if (randomkey != key) {
                 for (int i = 0; i < array.length; i++) {

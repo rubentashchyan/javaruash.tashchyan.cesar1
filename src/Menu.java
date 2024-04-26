@@ -2,15 +2,18 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
-    Scanner scanner = new Scanner(System.in);
 
+    private final Scanner scanner;
+    private final FileManager getter;
+    private final EncryptorManager shfr;
 
-    Textgetter Getter = new Textgetter();
+    public Menu(Scanner scanner, FileManager getter, EncryptorManager shfr) {
+        this.getter = getter;
+        this.shfr = shfr;
+        this.scanner = scanner;
+    }
 
-
-    RussianOrtodoxEncryptor shfr = new RussianOrtodoxEncryptor(Getter);
-
-public  void Start () throws IOException {
+    public void start() throws IOException {
         while (true) {
             System.out.println("Меню");
             System.out.println("выберите действие");
@@ -25,30 +28,34 @@ public  void Start () throws IOException {
 
             if (comanda == 1) {
                 System.out.println("введите адрес файла ");
-                Getter.FileGetter();
+                getter.FileGetter();
+                System.out.println("Введите ключ");
+                shfr.setKey(scanner.nextInt());
                 String encryptor = shfr.encryptor();
 
                 System.out.println("файл зашифрован, сохраните файл");
                 System.out.println("введите адрес для сохранения файла");
-                Getter.FileWriter(encryptor);
+                getter.FileWriter(encryptor);
 
             }
 
             if (comanda == 2) {
                 System.out.println("введите адрес файла ");
-                Getter.FileGetter();
+                getter.FileGetter();
+                System.out.println("Введите ключ");
+                shfr.setKey(scanner.nextInt());
                 String decryptor = shfr.decryptor();
                 System.out.println("файл дешифрован, сохраните файл");
                 System.out.println("введите адрес для сохранения файла");
-                Getter.FileWriter(decryptor);
+                getter.FileWriter(decryptor);
             }
             if (comanda == 3) {
                 System.out.println("введите адрес файла ");
-                Getter.FileGetter();
+                getter.FileGetter();
                 String bruteforce = shfr.bruteforce();
                 System.out.println("файл взломан, сохраните файл");
                 System.out.println("введите адрес для сохранения файла");
-                Getter.FileWriter(bruteforce);
+                getter.FileWriter(bruteforce);
 
             }
         }
