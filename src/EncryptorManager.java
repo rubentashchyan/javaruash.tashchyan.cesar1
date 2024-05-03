@@ -22,7 +22,7 @@ public class EncryptorManager {
         RussianAlphabet alph = new RussianAlphabet();
 
 
-        return alph.arrayListToChars();
+        return RussianAlphabet();
     }
 
     public char[] FileToChars() throws IOException {

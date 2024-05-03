@@ -41,7 +41,7 @@ public class FileManager {
     }
 
 
-    public void ReadFile() throws IOException {
+    public void readFile() throws IOException {
         getfile = scanner.nextLine();
         File file = new File(getfile);
         BufferedReader input = new BufferedReader(new FileReader(file));
@@ -51,7 +51,7 @@ public class FileManager {
         input.close();
     }
 
-    public void WriterFile (String text) throws IOException {
+    public void writerFile (String text) throws IOException {
 
         writefile = scanner.nextLine();
 
