@@ -3,9 +3,9 @@ import java.util.List;
 
 public class RussianAlphabet {
 
-    private final ArrayList<String> alphabet = new ArrayList<>(List.of("A", "а", "Б", "б", "В", "в", "Г", "г", "Д", "д", "Е", "е", "Ё", "ё",
-            "Ж", "ж", "З", "з", "И", "и", "К", "к", "Л", "л", "М", "м", "Н", "н", "О", "о", "П", "п", "Р", "р", "С", "с", "Т", "т", "У", "у",
-            "Ф", "ф", "Х", "х", "Ц", "ц", "Ч", "ч", "Ш", "ш", "Щ", "щ", "Ъ", "ъ", "Ы", "ы", "Ь", "ь", "Э", "э", "Ю", "ю", "Я", "я", ",", ".", "!", "?", "(", ")", " "));
+    private final List <Character> alphabet = new ArrayList<> (List.of('A', 'а', 'Б', 'б', 'В', 'в', 'Г', 'г', 'Д', 'д', 'Е', 'е', 'Ё', 'ё',
+            'Ж', 'ж', 'З', 'з', 'И', 'и', 'К', 'к', 'Л', 'л', 'М', 'м', 'Н','н', 'О', 'о', 'П', 'п', 'Р', 'р', 'С', 'с', 'Т', 'т', 'У', 'у',
+            'Ф', 'ф', 'Х', 'х', 'Ц', 'ц', 'Ч', 'ч', 'Ш', 'ш', 'Щ', 'щ', 'Ъ', 'ъ', 'Ы', 'ы', 'Ь', 'ь', 'Э', 'э', 'Ю', 'ю', 'Я', 'я', ',', '.', '!', '?', '(', ')', ' '));
 
 
 //    public char[] arrayListToChars() {
@@ -19,7 +19,7 @@ public class RussianAlphabet {
 //        return concatenatedString.toCharArray();
 //    }
 
-    public ArrayList<String> getAlphabet() {
+    public List<Character> getAlphabet() {
         return this.alphabet;
     }
 }

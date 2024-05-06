@@ -9,21 +9,12 @@ public class EncryptorManager {
     public FileManager getter;
 
 
-
     public EncryptorManager(FileManager getter, RussianAlphabet alphabet) {
         this.getter = getter;
         this.alphabet = alphabet;
 
     }
 
-
-
-    public char[] RussianAlphabet() {
-        RussianAlphabet alph = new RussianAlphabet();
-
-
-        return RussianAlphabet();
-    }
 
     public char[] FileToChars() throws IOException {
 
@@ -43,7 +34,7 @@ public class EncryptorManager {
         for (int i = 0; i < array.length; i++) {
             char c = copy[i];
             int index = alphabet.getAlphabet().indexOf(String.valueOf(c));
-            array[i] = RussianAlphabet()[(index + key) % alphabet.getAlphabet().size()];
+            array[i] = alphabet.getAlphabet().get((index + key) % alphabet.getAlphabet().size());
 
 
         }
@@ -55,7 +46,7 @@ public class EncryptorManager {
     public String decryptor() throws IOException {
 
         char[] array = FileToChars();
-//         char [] copy = array;
+
         char[] copy = new char[array.length];
         for (int i = 0; i < array.length; i++) {
             copy[i] = array[i];
@@ -64,7 +55,7 @@ public class EncryptorManager {
         for (int i = 0; i < array.length; i++) {
             char c = copy[i];
             int index = alphabet.getAlphabet().indexOf(String.valueOf(c));
-            array[i] = RussianAlphabet()[(index - key + alphabet.getAlphabet().size()) % alphabet.getAlphabet().size()];
+            array[i] = alphabet.getAlphabet().get((index - key + alphabet.getAlphabet().size()) % alphabet.getAlphabet().size());
         }
         System.out.println(new String(array));
         getter.setText("");
@@ -87,7 +78,7 @@ public class EncryptorManager {
             for (int i = 0; i < array.length; i++) {
                 char c = copy[i];
                 int index = alphabet.getAlphabet().indexOf(String.valueOf(c));
-                array[i] = RussianAlphabet()[(index - randomkey + alphabet.getAlphabet().size()) % alphabet.getAlphabet().size()];
+                array[i] = alphabet.getAlphabet().get((index - randomkey + alphabet.getAlphabet().size()) % alphabet.getAlphabet().size());
             }
             if (randomkey != key) {
                 for (int i = 0; i < array.length; i++) {
