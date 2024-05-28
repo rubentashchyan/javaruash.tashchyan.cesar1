@@ -4,8 +4,8 @@ import java.util.Scanner;
 @SuppressWarnings("ALL")
 public class FileManager {
     private final Scanner scanner;
-    private String InputFileName;
-    private String OutputFileName;
+    private String inputFileName;
+    private String outputFileName;
     private String text = "";
 
     public FileManager(Scanner scanner) {
@@ -13,7 +13,7 @@ public class FileManager {
     }
 
     public String getFile() {
-        return InputFileName;
+        return inputFileName;
     }
 
     public Scanner getScanner() {
@@ -29,33 +29,33 @@ public class FileManager {
     }
 
     public String getOutputFileName() {
-        return OutputFileName;
+        return outputFileName;
     }
 
-    public void setOutputFileName(String outputFileName) {this.OutputFileName =  OutputFileName; }
+    public void setOutputFileName(String outputFileName) {this.outputFileName = this.outputFileName; }
 
     public void setInputFileName (String inputFileName) {
-        this.InputFileName = InputFileName;
+        this.inputFileName = this.inputFileName;
     }
 
 
     public void readFile() throws IOException {
-        InputFileName = scanner.nextLine();
-        File file = new File(InputFileName);
-        BufferedReader input = new BufferedReader(new FileReader(file));
+        inputFileName = scanner.nextLine();
+        File sourceFile = new File(inputFileName);
+        BufferedReader input = new BufferedReader(new FileReader(sourceFile));
         while (input.ready()) {
             text = text + input.readLine();
         }
         input.close();
     }
 
-    public void writerFile(String text) throws IOException {
+    public void writeFile(String text) throws IOException {
 
-        OutputFileName = scanner.nextLine();
+        outputFileName = scanner.nextLine();
 
-        File file2 = new File(OutputFileName);
-        file2.createNewFile();
-        try (BufferedWriter output = new BufferedWriter(new FileWriter(file2))) {
+        File destinationFile = new File(outputFileName);
+        destinationFile.createNewFile();
+        try (BufferedWriter output = new BufferedWriter(new FileWriter(destinationFile))) {
             output.write(text);
         }
 

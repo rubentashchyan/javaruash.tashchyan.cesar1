@@ -10,7 +10,8 @@ public class Main {
         FileManager getter = new FileManager(scanner);
         RussianAlphabet alphabet = new RussianAlphabet();
         EncryptorManager shfr = new EncryptorManager(getter, alphabet);
-        Menu menu = new Menu(scanner, getter, shfr);
+        DecryptorManager dcrpt = new DecryptorManager(alphabet, getter);
+        Menu menu = new Menu(scanner, getter, shfr, dcrpt);
 
         menu.start();
     }
