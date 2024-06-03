@@ -9,12 +9,13 @@ public class Menu {
 
     private DecryptorManager dcrpt;
 
-
-    public Menu(Scanner scanner, FileManager getter, EncryptorManager shfr, DecryptorManager dcrpt) {
+   private  BruteForce bruteForce;
+    public Menu(Scanner scanner, FileManager getter, EncryptorManager shfr, DecryptorManager dcrpt, BruteForce bruteForc) {
         this.getter = getter;
         this.shfr = shfr;
         this.scanner = scanner;
         this.dcrpt = dcrpt;
+        this.bruteForce = bruteForc;
     }
 
 
@@ -56,12 +57,8 @@ public class Menu {
                 getter.writeFile(decryptor);
             }
             if (comanda == 3) {
-                System.out.println("введите адрес файла ");
-                getter.readFile();
-                String bruteforce = shfr.bruteforce();
-                System.out.println("файл взломан, сохраните файл");
-                System.out.println("введите адрес для сохранения файла");
-                getter.writeFile(bruteforce);
+
+                System.out.println(bruteForce.bruteforce());
 
             }
         }
