@@ -34,7 +34,7 @@ public class Menu {
 
 
             if (comanda == 1) {
-                System.out.println("введите адрес файла ");
+                System.out.println("введите адрес вашего файла ");
                 getter.readFile();
                 System.out.println("Введите ключ");
                 shfr.setKey(scanner.nextInt());
